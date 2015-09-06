@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:700,400,300,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <header class="header-bar">
+            <span class="nav-text">Intro to JavaScript and JQuery</span>
+
+            <nav class="nav-list-wrapper">
+                <ul class="nav-list">
+                    <li class="nav-list-item" data-section="review">Review</li>
+                    <li class="nav-list-item" data-section="js101">JS 101</li>
+                    <li class="nav-list-item" data-section="js102">JS 102</li>
+                    <li class="nav-list-item" data-section="js103">JS 103</li>
+                    <li class="nav-list-item" data-section="jquery1">JQuery 1</li>
+                    <li class="nav-list-item active" data-section="jquery2">JQuery 2</li>
+                    <li class="nav-list-item" data-section="jquery3">JQuery 3</li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="section">
+            <div class="left">
+                <h1 class="header-1">JQuery 2</h1>
+            </div>
+
+            <div class="right">
+                <h2 class="header-2">Tasks</h2>
+
+                <ul class="agenda-list">
+                    <li class="agenda-list-item">
+                        <span class="checkbox"></span>
+                        <p>Listen for a click event on each of the nav list items</p>
+                    </li>
+                    <li class="agenda-list-item">
+                        <span class="checkbox"></span>
+                        <p>Add an active state to the nav item that was clicked</p>
+                    </li>
+                    <li class="agenda-list-item">
+                        <span class="checkbox"></span>
+                        <p>Remove active state from other nav item</p>
+                    </li>
+                    <li class="agenda-list-item">
+                        <span class="checkbox"></span>
+                        <p>Change the background color of header bar according the colorMap object given in main.js</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <script src="jquery-1.11.3.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+
+</html>
