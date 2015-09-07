@@ -5,7 +5,8 @@ var colorMap = {
     js103: "#EDC951",
     jquery1: "#4BAF4F",
     jquery2: "#9C26B0",
-    jquery3: "#009688"
+    jquery3: "#009688",
+    bonus: '#607D8B'
 };
 
 $(document).ready(function(){
@@ -36,7 +37,12 @@ $(document).ready(function(){
 
             // Step 2: Hide all the sections so we can then fade in the one we just clicked on
             $('.section').hide();
+
             // Talk about the fade out / fade in with callbacks option
+            // $('.section.current').fadeOut(300,function() {
+            //     $(".section[data-section=" + section + "]").fadeIn().addClass('current');
+            //     $(".header-1").css('color', color);
+            // }).removeClass('current');
 
             // Step 3: Now that we've added data-section attributes to each section,
             // Let's target the section of the nav-list-item we just clicked on

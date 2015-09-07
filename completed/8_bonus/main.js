@@ -31,7 +31,7 @@ $(document).ready(function(){
             // Step 1: Instead of setting the color for each element that needs a color change,
             // We are setting the body class to relfect the current section.
             // We have definied all necessary styles in the css
-            $('body').attr('class', 'page-' + section)
+            $('body').attr('class', 'page-' + section);
 
             $(".section[data-section=" + section + "]").fadeIn().siblings('section').hide();
 
