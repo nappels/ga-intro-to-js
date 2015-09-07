@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to JavaScript and jQuery</title>
+
+		<meta name="description" content="A slide presentation to go along with the Intro to JS and jQuery class taught at General Assembly">
+		<meta name="author" content="Noah Appel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<header class="slide-header"></header>
+
+				<section>
+					<h1>Intro to JavaScript and jQuery</h1>
+					<h3>(How to make things on the web)</h3>
+					<p>
+						<small>Taught by <a href="http://hakim.se">Noah Appel</a> / <a href="https://twitter.com/NoahAppel">@NoahAppel</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Intros</h2>
+					<aside class="notes">
+						<ul>
+							<li>Intro myself</li>
+							<li>Have class go around and say name, what do you do, and why are you here</li>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Agenda</h2>
+					</section>
+
+					<section data-update-header="agenda">
+						<h2>Part 1: Intro and review</h2>
+						<ul>
+							<li>High level intro to JS. What, why, how?</li>
+							<li>What is programming?</li>
+							<li>How does JS interact with HTML and CSS?</li>
+							<li>High level intro to jQuery. What, why, how?</li>
+							<li>Exercise: Review</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 2: JS 101</h2>
+						<ul>
+							<li>The web console</li>
+							<li>Basic JS in the console</li>
+							<li>Basic JS in the text editor</li>
+							<li>High level goals when writing JS</li>
+							<li>Exercise: JS 101</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 3: JS 102</h2>
+						<ul>
+							<li>Data types</li>
+							<li>Variables</li>
+							<li>Comparison operators</li>
+							<li>Logical operators</li>
+							<li>if / else statements</li>
+							<li>Exercise: JS 102</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 4: JS 103</h2>
+						<ul>
+							<li>Functions</li>
+							<li>Loops</li>
+							<li>Exercise: JS 103</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 4: jQuery 1</h2>
+						<ul>
+							<li>Intro to jQuery. What is a "library"?</li>
+							<li>How to include jQuery on your page</li>
+							<li>Select elements without jQuery</li>
+							<li>Selecting elements with jQuery</li>
+							<li>Methods: addClass(), removeClass(), toggleClass()</li>
+							<li>The jQuery docs</li>
+							<li>The click event</li>
+							<li>The "this" keyword</li>
+							<li>Exercise: jQuery 1</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 5: jQuery 2</h2>
+						<ul>
+							<li>Event driven programming</li>
+							<li>Chaining together methods</li>
+							<li>Methods: siblings(), attr(), css()</li>
+							<li>Exercise: jQuery 2</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 6: jQuery 3</h2>
+						<ul>
+							<li>Seperation of concerns</li>
+							<li>The power of CSS classes and jQuery together</li>
+							<li>Methods: hide()/show(), fadeIn()/fadeOut(), css()</li>
+							<li>Callback functions</li>
+							<li>AJAX</li>
+							<li>Exercise: jQuery 3</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Part 7: Outro</h2>
+						<ul>
+							<li>Resources</li>
+							<li>Next steps</li>
+							<li>Q&amp;A</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Part 1: Intro and Review</h2>
+				</section>
+
+				<section>
+					<h3>High level JS</h3>
+					<ul>
+						<li class="fragment">Created in 10 days by Brendan Eich in 1995 while working at Netscape</li>
+						<li class="fragment">Used to create interaction between websites and users</li>
+						<li class="fragment">JavaScript runs on the client side (aka front end)</li>
+						<li class="fragment">The programming language of the web</li>
+						<li class="fragment">Programming is defined as
+							<blockquote cite="https://en.wikipedia.org/wiki/Programming_language">
+								A programming language is a formal constructed language designed to communicate instructions to a machine, particularly a computer. Programming languages can be used to create programs to control the behavior of a machine or to express algorithms.
+							</blockquote>
+						</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Programming language. Tasks are done programaticlly. With logic. Based on this, do that.</li>
+							<li>Common route to JS is through web design and dev. Eventually you have to use it, and it's fun. Makes it different than other programming languages.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>HTML, CSS, and...</h3>
+					<ul>
+						<li class="fragment">HTML defines the structure of the web page</li>
+						<li class="fragment">CSS applies the styles</li>
+						<li class="fragment">JavaScript creates interactions</li>
+						<li class="fragment">JavaScript has access to the DOM via the DOM API</li>
+						<li class="fragment">JavaScript knows when the user interacts with the site and can perform actions based on those interactions</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>High level jQuery</h3>
+					<ul>
+						<li class="fragment">jQuery is a open-sourced library</li>
+						<li class="fragment">Created in 2006</li>
+						<li class="fragment">Used on over 61% of the top 100,000 websites, over 20 mil overall (2011)</li>
+						<li class="fragment">Takes a lot of the repetetive tasks that we do in JS and makes them easier</li>
+						<li class="fragment">Cross browser compatible</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Talk about open sourced</li>
+							<li>Talk about what a library is</li>
+							<li>Talk about cross browser woes</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Exercise 1: Review</h3>
+				</section>
+
+				<section>
+					<h2>Part 2: JS 101</h2>
+				</section>
+
+				<section>
+					<h3>The web console...</h3>
+					<ul>
+						<li class="fragment">is your best friend</li>
+						<li class="fragment">It can also be a sandbox to play in</li>
+						<li class="fragment">Let's do some basic JS in web console</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Talk about my dev set up with console</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Now, on to the text editor</h3>
+					<ul>
+						<li class="fragment">Basic JS in the text editor</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Have students hello to themselves in the tet editor</li>
+							<li>Why does it just happen when you refresh the page?</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>High level goals when writing JS</h3>
+					<ul>
+						<li class="fragment">It works</li>
+						<li class="fragment">Readable</li>
+						<li class="fragment">Performant</li>
+						<li class="fragment">DRY</li>
+						<li class="fragment">Semicolons</li>
+						<li class="fragment">Comments</li>
+						<pre class="fragment"><code>
+// Anything after double backslashes are comments
+						</code></pre>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>The line between performant and readable</li>
+							<li>DRY and the rule of 3</li>
+							<li>Talk about comments</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Exercise: JS 101</h3>
+				</section>
+
+				<section>
+					<h2>Part 3: JS 102</h2>
+				</section>
+
+				<section>
+					<h3>Data types</h3>
+					<ul>
+						<li class="fragment">Data type definition
+							<blockquote cite="https://www.google.com/search?q=what+is+a+data+type&gws_rd=ssl">
+								A particular kind of data item, as defined by the values it can take.
+							</blockquote>
+						</li>
+						<li class="fragment">Numbers</li>
+						<li class="fragment">Strings</li>
+						<li class="fragment">Boolean</li>
+						<li class="fragment">Arrays</li>
+						<li class="fragment">Objects</li>
+						<li class="fragment">The typeof operator</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>In JS, you don't need to define the kind of data type, it's implied.</li>
+							<li>Show each type in text editor</li>
+							<li>Difference between 1 and "1"</li>
+							<li>How to create a new version of each data type</li>
+							<li>The "new" keyword</li>
+							<li>How to access items from an array and from an object</li>
+							<li>Array.length</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Variables</h3>
+					<pre><code>
+var myName = "Noah";
+					</code></pre>
+					<ul>
+						<li class="fragment">A variable is a container for storing data values (just like algebra)</li>
+						<li class="fragment">The "var" keyword is used to define a variable</li>
+						<li class="fragment">Equals = the assignment operator</li>
+						<li class="fragment">Variables can store any type of data</li>
+						<li class="fragment">Variables can change value</li>
+						<li class="fragment">Naming variables</li>
+						<li class="fragment">Putting variables together in a string</li>
+						<li class="fragment">Storing a window.confirm result inside a variable</li>
+
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Show basic usages of variables by setting 2 different variables, and then adding them together.</li>
+							<li>Show correct and incorrect way to assign a variable</li>
+							<li>Must contain letters, digits, underscores, and dollar signs </li>
+							<li>Must begin with a letter</li>
+							<li>Names can also begin with $ and _</li>
+							<li>Names are case sensitive</li>
+							<li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+							<li>Camel case naming convention</li>
+						</ul>
+					</aside>
+				</section>
+
+
+				<section>
+					<h3>Comparison Operators</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Operator</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="fragment">
+								<td><</td>
+								<td>Less than</td>
+							</tr>
+							<tr class="fragment">
+								<td>></td>
+								<td>Greater than</td>
+							</tr>
+							<tr class="fragment">
+								<td>==</td>
+								<td>equal to</td>
+							</tr>
+							<tr class="fragment">
+								<td>===</td>
+								<td>equal value and equal type</td>
+							</tr>
+							<tr class="fragment">
+								<td>!=</td>
+								<td>not equal to</td>
+							</tr>
+							<tr class="fragment">
+								<td>!==</td>
+								<td>not equal value or not equal type</td>
+							</tr>
+							<tr class="fragment">
+								<td><=</td>
+								<td>less than or equal to</td>
+							</tr>
+							<tr class="fragment">
+								<td>>=</td>
+								<td>greater than or equal to</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<aside class="notes">
+						<ul>
+							<li>== is equal to value. JS will try and "coerce"</li>
+							<li>=== equal value and equal type</li>
+							<li>Give examples of comarisons in console</li>
+							<li>The mistake of using = when trying to ask ===</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Logical Operators</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Operator</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="fragment">
+								<td>&&</td>
+								<td>AND</td>
+							</tr>
+							<tr class="fragment">
+								<td>||</td>
+								<td>OR</td>
+							</tr>
+							<tr class="fragment">
+								<td>!</td>
+								<td>NOT</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<aside class="notes">
+						<ul>
+							<li>Used to determine the logic between variables or values</li>
+							<li>Show some examples in console</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>if / else statements</h3>
+					<ul>
+						<li class="fragment">At the core of any programming language</li>
+					</ul>
+					<pre class="fragment"><code>
+if (condition) {
+	// If condition === true, this code runs
+}
+else {
+	// If condition === false, this code runs
+}
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>Show examples, have class guess truth or flase</li>
+							<li>Have class try in console</li>
+							<li>Talk about else if</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Exercise: JS 102</h3>
+				</section>
+
+				<section>
+					<h2>Part 4: JS 103</h2>
+				</section>
+
+				<section>
+					<h3>Functions</h3>
+					<ul>
+						<li class="fragment">The real power of programming</li>
+						<li class="fragment">Great for repeating tasks</li>
+						<li class="fragment">Can take input values</li>
+						<li class="fragment">Runs code, then typically returns a value</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Example of mundane, repetitive task. Now what about if you had a function?</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>What does a function look like?</h3>
+					<pre class="fragment"><code>
+function helloWorld() {
+	return "Hello World"
+};
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>The "funciton" keyword</li>
+							<li>The "return" keyword</li>
+							<li>Nothing after the return keyword, unless in an if / else statement</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>How to execute a function</h3>
+					<pre class="fragment"><code>
+helloWorld();
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>Show in console</li>
+							<li>Have class try in console</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Now with arguments</h3>
+					<pre class="fragment"><code>
+function hello(name) {
+	return "Hello " + name;
+};
+
+hello('Noah');
+
+// Will return "Hello Noah"
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>Arguments can be any data type</li>
+							<li>Any code inside the function has access to the arguments</li>
+							<li>Notice name did not have to defined with var keyword</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Loops</h3>
+					<ul>
+						<li class="fragment">Loops iterate through a list <span class="fragment">(typically an array)</span></li>
+						<li class="fragment">Offer a quick and easy way to perform the same task over and over again</li>
+						<li class="fragment">We're going to focus on the "for" loop</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>The for loop</h3>
+					<pre><code>
+for (var i = 0; i < 5; i++) {
+	// Run this code 5 times
+}
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>Break down each element in the for loop</li>
+							<li>Code won't move on until loop is over</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Looping through an array</h3>
+					<pre><code>
+var array = [10, 20, 30, 40, 50];
+
+for (var i = 0; i < array.length; i++) {
+	console.log(array[i])
+}
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>Remember how array's are accesed</li>
+							<li>Array[i] will return each item in the array</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Running a function in a loop</h3>
+					<pre><code>
+function add10(number) {
+	return number + 10;
+};
+
+var array = [10, 20, 30, 40, 50];
+
+for (var i = 0; i < array.length; i++) {
+	console.log(add10(array[i]));
+}
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li>The functions input is each item in the array</li>
+							<li>Run function by itself, then run loop example in console.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Exercise: JS 103</h3>
+				</section>
+
+				<section>
+					<h2>Part 4: jQuery 1</h2>
+				</section>
+
+				<section>
+					<h3>High Level jQuery</h3>
+					<ul>
+						<li class="fragment">jQuery is a library</li>
+						<li class="fragment">jQuery is open sourced, meaning you can change it and contribute to it.</li>
+						<li class="fragment">It adds cross browser functionality</li>
+						<li class="fragment">Makes it possible to write a lot less code</li>
+						<li class="fragment">It does add some "weight" to your page</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Add jQuery to your site</h3>
+					<p>There are 2 ways to do it:</p>
+					<div class="fragment">
+						<h4>Download it</h4>
+						<pre><code>
+<script src="jquery-1.11.3.min.js"></script>
+						</code></pre>
+					</div>
+					<div class="fragment">
+						<h4>Use a CDN</h4>
+						<pre><code>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+						</code></pre>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Look at the index.html src to see where it's included</li>
+							<li>Pros and cons to both</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Selecting elements without jQuery</h3>
+					<div class="fragment">
+						<pre><code>
+document.getElementById('elementId');
+						</code></pre>
+					</div>
+					<ul>
+						<li class="fragment">There are many different ways to select an element in plain JS, not all is supported in every browser</li>
+						<li class="fragment">Once an element is selected, there are a lot of steps you need to take to perform an action on that element</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>jQuery to the rescue</h3>
+					<div class="fragment">
+						<pre><code>
+$('.myElement');
+						</code></pre>
+					</div>
+					<ul>
+						<li class="fragment">Uses css selectors to select an element</li>
+						<li class="fragment">Works in every browser</li>
+						<li class="fragment">Can perform any jQuery method on that element very easily</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Using jQuery methods</h3>
+					<pre><code>
+$('.myElement').addClass('active');
+					</code></pre>
+					<ul>
+						<li class="fragment">Uses "dot" syntax</li>
+						<li class="fragment">There are hundred of methods you can use</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Show examples using console</li>
+							<li>Whenever you $().[anything], you can just look that up in the docs</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Some methods</h3>
+					<div class="fragment">
+						<h4>.addClass()</h4>
+<pre><code>$('.myElement').addClass('newClass');</code></pre>
+					</div>
+
+					<div class="fragment">
+						<h4>.removeClass()</h4>
+<pre><code>$('.myElement').removeClass('newClass');</code></pre>
+					</div>
+
+					<div class="fragment">
+						<h4>.toggleClass()</h4>
+<pre><code>$('.myElement').toggleClass('newClass');</code></pre>
+					</div>
+
+
+					<aside class="notes">
+						<ul>
+							<li>Code sample here</li>
+						</ul>
+					</aside>
+				</section>
+
+
+				<section>
+					<h3>The jQuery docs</h3>
+					<a href="https://api.jquery.com/">https://api.jquery.com</a>
+					<ul>
+						<li class="fragment">Because you can't and shouldn't memorize it all</li>
+						<li class="fragment">A complete list of methods</li>
+						<li class="fragment">Tells you exactly how each method should be used</li>
+						<li class="fragment">Refer to it ALWAYS</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>The click event</h3>
+					<pre><code>
+$('.myElement').click(function() {
+	// When .myElement is clicked, this code will run
+});
+					</code></pre>
+					<ul>
+						<li class="fragment">This is called an event listener</li>
+						<li class="fragment">This code will run once the .myElement element is clicked on</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>The "this" keyword</h3>
+					<pre><code>
+$('.myElement').click(function() {
+	// $(this) will select the element you just clicked on
+
+	$(this).addClass('clicked');
+});
+					</code></pre>
+					<ul>
+						<li class="fragment">The "this" keyword refers to the element you just clicked on</li>
+						<li class="fragment">It has a very special meaning in JS</li>
+						<li class="fragment">Use the same jQuery selector syntax, but you dont need quotes</li>
+						<li class="fragment">Useful when you are selecting many elements at once, but only want to manipulate the element that was just interacted with</li>
+						<li class="fragment">Can use with any event</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Talk about a list of elements, change only the element you clicked</li>
+							<li>You can select each one individually, or use the this keyword and only select once</li>
+							<li>Code sample here</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Exercise: jQuery1</h3>
+				</section>
+
+				<section>
+					<h2>Part 5: jQuery 2</h2>
+				</section>
+
+				<section>
+					<h3>Event Driven Programming</h3>
+					<ul>
+						<li class="fragment">JS is an event driven programming language</li>
+						<li class="fragment">jQuery gives us nice shortcuts to "bind" events</li>
+						<li class="fragment">You may see the .on() method instead</li>
+						<li class="fragment">Don't forget to use .off()!</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Code Sample here - 2 .on() methods, then show .off()</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>More methods</h3>
+					<div class="fragment">
+						<h4>.siblings()</h4>
+<pre><code>$('.myElement').siblings();
+
+// or include a selector
+$('.myElement').siblings('.selector');</code></pre>
+					</div>
+
+					<div class="fragment">
+						<h4>.attr()</h4>
+<pre><code>// get an attribute's value
+$('.myElement').attr('class');
+
+// set an attribute's value
+$('.myElement').attr('class', 'newClass');
+</code></pre>
+					</div>
+
+					<div class="fragment">
+						<h4>.css()</h4>
+<pre><code>// get a css style
+$('.myElement').css('background-color');
+
+// set a css value
+$('.myElement').css('background-color', '#fff');
+</code></pre>
+					</div>
+
+
+					<aside class="notes">
+						<ul>
+							<li>attr get, set pattern a common one</li>
+							<li>Notice in sibling you need to include the dot, but not in the attr set method</li>
+							<li>There are ways to access many different properties and change different properties with one call. Go to docs to find out.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Chaining jQuery methods</h3>
+					<pre><code>
+$('.myElement').click(function() {
+	// $(this) will select the element you just clicked on
+
+	$(this).addClass('clicked').fadeOut().fadeIn().siblings().fadeOut().fadeIn();
+});
+					</code></pre>
+
+					<ul>
+						<li class="fragment">You can chain together as many methods as you like</li>
+						<li class="fragment">Don't forget the parenthesis each time</li>
+						<li class="fragment">Be careful if you change which element you are targeting</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Exercise: jQuery 2</h3>
+				</section>
+
+				<section>
+					<h2>Part 6: jQuery 3</h2>
+				</section>
+
+				<section>
+					<h3>Seperation of conerns</h3>
+					<ul>
+						<li class="fragment">Time's have changed with CSS3</li>
+						<li class="fragment">Leave all your style definitions in CSS</li>
+						<li class="fragment">Even your animations now can go in your CSS</li>
+						<li class="fragment">Manipulating CSS classes is very powerful</li>
+						<li class="fragment">Use jQuery to target elements on events</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>The difference between using jQuery 5 years ago, and now. (Animations)</li>
+							<li>jQuery should be used for events, targeting elements, AJAX, but NOT STYLES</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>The power of classes and jQuery together</h3>
+					<div class="fragment">
+						<h4>Just jQuery</h4>
+<pre><code>
+$('.myElement').css('background-color', #336699);
+
+$('.anotherElement').css('background-color', #336699);
+
+$('.someText').css('color', #336699);
+</code></pre>
+					</div>
+
+					<div class="fragment">
+						<h4>Now with CSS</h4>
+<pre><code>
+// JavaScript
+$('body').addClass('blue');
+
+// CSS
+body.blue .myElement {
+	background-color: #336699;
+}
+body.blue .anotherElement {
+	background-color: #336699;
+}
+body.blue .someText {
+	color: #336699;
+}
+</code></pre>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Maybe not less lines of code, but way more readable</li>
+							<li>Consider other people looking at your code, or if you were to come back to it months later</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>More methods</h3>
+					<div class="fragment">
+						<h4>.hide() and .show()</h4>
+<pre><code>$('.myElement').hide();
+
+$('.myElement').show();</code></pre>
+					</div>
+
+					<div class="fragment">
+						<h4>.fadeOut() and .fadeIn()</h4>
+<pre><code>
+$('.myElement').fadeOut();
+
+// can pass it a speed
+$('.myElement').fadeIn(600);
+</code></pre>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>what is an alternative way to do hide and show?</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Callback functions</h3>
+					<div>
+<pre><code>$('.myElement').fadeOut(600, function() {
+	$('.newElement').fadeIn(600);
+});</code></pre>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Check docs to see order of arguments</li>
+							<li>The "this" keyword changes value in callbacks</li>
+							<li>Can have as many callbacks as you want, but be careful of readability</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>AJAX</h3>
+					<ul>
+						<li class="fragment">Is not a new programming language</li>
+						<li class="fragment">Just another jQuery method</li>
+						<li class="fragment">Loads content from another source onto your page</li>
+						<li class="fragment">Used to create SPAs</li>
+						<li class="fragment">http://api.jquery.com/jquery.ajax/</li>
+					</ul>
+
+					<div class="fragment">
+<pre><code>
+$.ajax({
+	url: , // url of where the content is coming from
+	data: , // data to be passed in the request
+	success: function() { // Code to run after you get the content from the request },
+	error: function() { // Code to run if there was an error on the request }
+});
+</code></pre>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>This is an advanced concept</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Exercise: jQuery 3</h3>
+				</section>
+
+				<section>
+					<h2>Part 7: Outro</h2>
+				</section>
+
+				<section>
+					<h3>Resources</h3>
+					<ul>
+						<li class="fragment">The jquery docs: https://api.jquery.com/</li>
+						<li class="fragment">The w3c: http://www.w3schools.com/</li>
+						<li class="fragment">Mozilla MDN: https://developer.mozilla.org/en-US/</li>
+						<li class="fragment">Stack overflow: http://stackoverflow.com/</li>
+						<li class="fragment">CSS Tricks: https://css-tricks.com/</li>
+						<li class="fragment">JS Fiddle: https://jsfiddle.net/</li>
+						<li class="fragment">Google is your best friend</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Next steps</h3>
+					<ul>
+						<li class="fragment">Dash: https://dash.generalassemb.ly/</li>
+						<li class="fragment">Codeacedemy: https://www.codecademy.com/learn</li>
+						<li class="fragment">Take an extended class</li>
+						<li class="fragment">Start building</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Q&amp;A</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/main.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
