@@ -19,7 +19,7 @@ $(document).ready(function(){
         // Hint: Use a console.log to make sure your logic works!
         if (!$(this).hasClass('active')) {
             console.log('changing!')
-            // Step 2: Change the active state the item you just clicked on
+            // Step 2: Give the element you just clicked on a class of "active"
             $(this).addClass('active');
 
             // Step 3: Remove active class from all sibling elements

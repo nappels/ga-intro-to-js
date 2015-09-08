@@ -33,7 +33,10 @@ $(document).ready(function(){
             // We have definied all necessary styles in the css
             $('body').attr('class', 'page-' + section);
 
-            $(".section[data-section=" + section + "]").fadeIn().siblings('section').hide();
+            $('.section.current').fadeOut(300,function() {
+                $(".section[data-section=" + section + "]").fadeIn().addClass('current');
+                $(".header-1").css('color', color);
+            }).removeClass('current');
 
         }
     });

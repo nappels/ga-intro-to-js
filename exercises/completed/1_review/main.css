@@ -1,0 +1,9 @@
+.header-bar .nav-list li.active {
+    border-color: #fff;
+}
+.header-bar .nav-list li:hover {
+    border-color: rgba(255,255,255,0.8);
+}
+.section .header-1 {
+    color: #336699;
+}

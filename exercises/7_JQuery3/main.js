@@ -20,35 +20,25 @@ $(document).ready(function(){
     $(".nav-list-item").click(function() {
         if (!$(this).hasClass('active')) {
 
-            // Change the active state the item you just clicked on
             $(this).addClass('active');
 
-            // Remove active class from all sibling elements
             $(this).siblings().removeClass('active');
 
-            // Change the color of the header bar's background, according to the colorMap object defined above
             var section = $(this).attr('data-section');
             var color = colorMap[section];
 
             $(".header-bar").css('background', color);
 
             // Step 1: Change the color of the header-1 element to match header-bar
-            $(".header-1").css('color', color);
 
             // Step 2: Hide all the sections so we can then fade in the one we just clicked on
-            $('.section').hide();
-
-            // Talk about the fade out / fade in with callbacks option
-            // $('.section.current').fadeOut(300,function() {
-            //     $(".section[data-section=" + section + "]").fadeIn().addClass('current');
-            //     $(".header-1").css('color', color);
-            // }).removeClass('current');
 
             // Step 3: Now that we've added data-section attributes to each section,
             // Let's target the section of the nav-list-item we just clicked on
-            // Step 1a: Fade in the section
-            $(".section[data-section=" + section + "]").fadeIn();
+            // Then, fade in that section
 
+            // BONUS: Instead of hiding the sections and then fading in the one we want,
+            // how can we do this with a fadeOut, THEN fadeIn the correct section?
         }
     });
 });
